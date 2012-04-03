@@ -24,8 +24,9 @@ namespace FastIntroFramework
 
             Keyboard.KeyDown += KeyboardKeyDown;
 
-            var scene1 = new Scene();
-            _timeline.AddScene(scene1);
+            var plasma = new Plasma();
+            plasma.Duration = 2000.0;
+            _timeline.AddScene(plasma);
         }
 
         #region Keyboard_KeyDown
@@ -121,9 +122,9 @@ namespace FastIntroFramework
             GL.Vertex2(1.0f, 1.0f);
 
             GL.End();
-
+            
             this.SwapBuffers();*/
-            _timeline.GetScene(Time).OnRenderFrame(e);
+            _timeline.GetScene(Time).OnRenderFrame(e, this);
 
         }
 

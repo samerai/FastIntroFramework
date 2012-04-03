@@ -15,29 +15,29 @@ namespace FastIntroFramework
             set;
         }
 
-        public void OnLoad(EventArgs e)
+        public virtual void OnLoad(EventArgs e)
         {
             
         }
 
-        public void OnResize(EventArgs e)
+        public virtual void OnResize(EventArgs e)
         {
             
         }
 
-        public void OnUpdateFrame(FrameEventArgs e)
+        public virtual void OnUpdateFrame(FrameEventArgs e)
         {
             
             //_time += e.Time;
             //_shader["time"] = (float)_time;
         }
 
-        public void OnRenderFrame(FrameEventArgs e)
+        public virtual void OnRenderFrame(FrameEventArgs e, GameWindow window)
         {
 
         }
 
-        public void SetupCamera()
+        public virtual void SetupCamera()
         {
             
         }
