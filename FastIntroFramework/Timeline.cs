@@ -13,20 +13,25 @@ namespace FastIntroFramework
             get;
             private set;
         }
+        public Timeline()
+        {
+            Scenelist = new LinkedList<Scene>();
+        }
 
-        public void addScene(Scene scene)
+        public void AddScene(Scene scene)
         {
             Scenelist.AddLast(scene);
         }
 
-        public Scene getScene(double Time)
+        //return scene at time Time. Assumes that time is linear along the linkedlist. If the time is larger than the total duration of the scenelist the last scene is returned
+        public Scene GetScene(double time)
         {
             double currentTime = 0;
             foreach (Scene scene in Scenelist) {
                 currentTime += scene.Duration;
-                if (Time < currentTime) return scene;
+                if (time < currentTime) return scene;
             }
-            return null;
+            return Scenelist.Last();
         }
         
     }
